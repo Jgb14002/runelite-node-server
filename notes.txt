@@ -1,0 +1,17 @@
+/users/
+- list users
+- create users
+- delete users
+- modify users
+- get user info
+    > user ID
+    > last login
+    > last ip
+    > HWID
+    > list <ips>
+    > discord
+    > plugins
+
+Mongo Creds:
+- LoudPacks
+- qrjT8LcjigBy0RKU

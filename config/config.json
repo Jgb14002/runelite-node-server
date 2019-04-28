@@ -1,0 +1,14 @@
+{
+    "development":{
+        "PORT": 3000,
+        "MONGO_DB_USER": "LoudPacks",
+        "MONGO_DB_PASS": "qrjT8LcjigBy0RKU",
+        "MONGO_DB_URL": "runelite-node-db-lwbdc.mongodb.net/test?retryWrites=true"
+    },
+    "production":{
+        "PORT": 80,
+        "MONGO_DB_USER": "LoudPacks",
+        "MONGO_DB_PASS": "qrjT8LcjigBy0RKU",
+        "MONGO_DB_URL": "runelite-node-db-lwbdc.mongodb.net/test?retryWrites=true"
+    }
+}

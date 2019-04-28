@@ -1,0 +1,31 @@
+{
+  "name": "runelite-node-server",
+  "version": "1.0.0",
+  "description": "A RESTful API for use with custom runelite plugin distribution.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoudPacks/runelite-node-server.git"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "LoudPacks",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/LoudPacks/runelite-node-server/issues"
+  },
+  "homepage": "https://github.com/LoudPacks/runelite-node-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.9.1"
+  }
+}
