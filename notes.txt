@@ -15,3 +15,6 @@
 Mongo Creds:
 - LoudPacks
 - qrjT8LcjigBy0RKU
+
+
+Add $push options for array field patching (users, licenses, plugins)

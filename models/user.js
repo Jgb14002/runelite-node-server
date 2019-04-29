@@ -3,8 +3,10 @@ const validator = require('mongoose-unique-validator');
 
 const userSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    username: {type: String, required: true, unique: true},
+    password: {type: String, required: true},
     date_created: {type:Date, required: true},
-    hwid: {type:String, required: true, unique: true},
+    hwid: {type:String, unique: true},
     last_login: Date,
     last_ip: String,
     discord: String,
