@@ -3,6 +3,7 @@ const licenses = express.Router();
 const mongoose = require('mongoose');
 
 const License = require('../../models/license');
+const User = require('../../models/user');
 
 licenses.get('/', (req, res, next) => {
     License.find()
@@ -40,6 +41,34 @@ licenses.post('/', (req, res, next) => {
         res.status(500).json({
             error: err
         });
+    });
+});
+
+licenses.post('/redeem', (req, res, next) => {
+    const _key = req.body.key;
+    const userID = req.body.userID;
+
+    License.findOneAndUpdate({key:_key, redeemed:false}, {$set:{redeemed:true, owner:userID}})
+    .exec()
+    .then(result => {
+        if(result != null){
+            User.pushPlugins(userID, result.plugins, (err) => {
+                if(err != null){
+                    res.status(500).json({
+                        error: err
+                    });
+                } else {
+                    res.status(200).json({message: "OK."});
+                }
+            });
+        } else {
+            res.status(401).json({message: "The specified key is invalid or has already been redeemed."});
+        }
+    })
+    .catch(err => {
+         res.status(500).json({
+             error: err
+         });
     });
 });
 
@@ -95,10 +124,4 @@ licenses.patch('/:licenseID', (req, res, next) => {
         });
    });
 });
-
-function redeem(userID, key)
-{
-    
-}
-
-module.exports = [licenses, redeem];
+module.exports = licenses;

@@ -6,7 +6,7 @@ const licenseSchema = mongoose.Schema({
     key: {type: String, required: true, unique: true},
     plugins: [{type: mongoose.Schema.Types.ObjectId, ref: 'Plugin', required: true}],
     redeemed: {type: Boolean, default: false},
-    owner: {type: mongoose.Schema.Types.ObjectId, red: 'User'}
+    owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 
 });
 

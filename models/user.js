@@ -20,4 +20,15 @@ const userSchema = mongoose.Schema({
 
 userSchema.plugin(validator);
 
+userSchema.statics.pushPlugins = function(userID, _plugins, callback)
+{
+    this.update({_id:userID}, {$push: {plugins: _plugins}})
+    .exec()
+    .then(result => {
+        callback(null);
+    }).catch(err => {
+        callback(err);
+    });
+}
+
 module.exports = mongoose.model('User', userSchema);

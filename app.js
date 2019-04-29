@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASS}@${process.env.MONGO_DB_URL}`, {useNewUrlParser : true});
 mongoose.Promise = global.Promise;
+mongoose.set('useFindAndModify', false);
 
 const apiRouter = require('./api/routes/api');
 
